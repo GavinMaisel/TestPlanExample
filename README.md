@@ -4,17 +4,17 @@
 
 # Login UI Tests
 
-## Login_Success
+## Login_Success_Desktop
     
-    Given I am an existing user who is logged out
+    Given I am an existing user who is logged out on desktop
     
     When I log in
     
     Then I am logged in
 
-## Login_Success_for_Mobile_View
+## Login_Success_for_Mobile_Web
     
-    Given I am an existing user on mobile view
+    Given I am an existing user who is logged out on mobile web
     
     When I log in on mobile view
     
