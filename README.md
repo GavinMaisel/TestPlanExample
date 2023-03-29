@@ -22,11 +22,11 @@
     
     Then I am logged in on mobile view
 
-### Unable_to_Login_with_Non-Existent_Email
+### Unable_to_Login_with_Unregistered_Email
     
     Given I am a guest on the login page
     
-    When I try to log in with a non-existent email address
+    When I try to log in with a unregistered email address
     
     Then I see the error invalid username/password
 
@@ -78,6 +78,7 @@
     When I hit the GraphQL API
     
     Then I receive a missing field error
+
 
 ## API Tests
 
