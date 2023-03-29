@@ -120,5 +120,88 @@
     When I hit the API
 
     Then I am returned the error <CUSTOM ERROR>
-    
+ 
+## Register User
+ 
+### Register User - Happy Path
    
+    Given I want to register as a user
+
+    When I hit the API
+    
+    Then I have registered
+    
+    And I can sign in
+    
+### Register User: email address validation: subdomain email address (test@test.example.com)
+
+    Given I want to create a user with a subdomain email address
+
+    When I hit the API
+
+    Then I have registered
+    
+    And I can sign in
+
+### Register User: email address validation: second-level domain email address (test@example.co.uk)
+
+    Given I want to create a user with a second-level domain email address
+
+    When I hit the API
+    
+    Then I have registered
+    
+    And I can sign in
+
+### Register User: email address validation: multiple periods the email address (test.test.test@example.com)
+
+    Given I want to create a user with multiple periods in the email address
+
+    When I hit the API
+
+    Then I have registered
+    
+    And I can sign in
+
+### Register User: email address validation: dash in domain of email address (test@qa-example.com)
+
+    Given I want to create a user with a dash in the domain of the email address
+
+    When I hit the API
+    
+    Then I have registered
+    
+    And I can sign in
+
+### Register User: email address validation: plus sign in email address (test+qa@example.com)
+
+    Given I want to create a user with a plus sign in the email address
+
+    When I hit the API
+    
+    Then I have registered
+    
+    And I can sign in
+
+### Register User: email address validation: long top-level domain in email address (test@example.museum)
+
+    Given I want to register a user with a long top-level domain in the email address
+
+    When I hit the API
+    
+    Then I have registered
+    
+    And I can sign in
+
+### Register User: email address gets trimmed (" test@example.com ")
+
+    Given I want to register a user with an email address that contains a leading and trailing space
+
+    When I hit the API
+
+    Then I have registered
+    
+    And the email address is trimmed
+    
+    And I can sign in
+    
