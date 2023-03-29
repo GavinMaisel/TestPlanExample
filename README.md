@@ -204,4 +204,110 @@
     And the email address is trimmed
     
     And I can sign in
+   
+### Register User: email address syntax validation error (example123)
+  
+    Given I want to register a user with an invalid email address
+    
+    When I hit the API
+    
+    Then I am returned the error <CUSTOM ERROR>
+
+### Register User: email address syntax validation error with special characters (qa+%%%()***///@example.com)
+ 
+    Given I want to register a user with an invalid email address containing special characters
+    
+    When I hit the API
+    
+    Then I am returned the error <CUSTOM ERROR>
+
+### Register User: email address strange invalid characters validation error (“(),:;<>[\]@example.com)
+
+    Given I want to register a user with strange invalid characters email address
+
+    When I hit the API
+
+    Then I am returned the error <CUSTOM ERROR>
+
+### Register User: emoji email address validation (test👾test@example.com)
+    
+    Given I want to register a user with an email address containing emoji
+    
+    When I hit the API
+    
+    Then I am returned the error ERR_VALIDATION_EMAIL
+
+### Register User: emoji email address validation (test@example.co🫒)
+    
+    Given I want to register a user with an email address ending with an emoji
+    
+    When I hit the API
+    
+    Then I am returned the error <CUSTOM ERROR>
+
+### Register User: space in email address validation (test test@example.com)
+    
+    Given I want to register a user with an email address containing a space
+    
+    When I hit the API
+    
+    Then I am returned the error <CUSTOM ERROR>
+
+### Register User: double period before @ symbol (test..test@example.com)
+    
+    Given I want to register a user with an email address containing double period before @ sign
+    
+    When I hit the API
+    
+    Then I am returned the error <CUSTOM ERROR>
+
+### Register User: double period after @ symbol (test@example..com)
+    
+    Given I want to register a user with an email address containing double period after @ sign
+    
+    When I hit the API
+    
+    Then I am returned the error <CUSTOM ERROR>
+
+### Register User: double @ symbol (test@@example.com)
+    
+    Given I want to register a user with an email address containing double @ sign
+    
+    When I hit the API
+    
+    Then I am returned the error <CUSTOM ERROR>
+
+### Register User: email address uniqueness validation
+
+    Given I want to register a user with a pre-existing email address
+    
+    When I hit the API
+    
+    Then I am returned the error <CUSTOM ERROR>
+
+### Register User: expected error when attempting to create user with same email address but with uppercase first character
+
+    Given I am an existing user
+    
+    And I attempt to register again with an otherwise duplicate email address that has different case
+    
+    When I hit the API
+    
+    Then I have not created another user for myself
+    
+    And I am returned the error <CUSTOM ERROR>
+    
+
+### Register User: expected error when attempting to create user with same email address but all uppercase
+
+    Given I am an existing user
+    
+    And I attempt to register again with an otherwise duplicate email address that is all uppercase
+    
+    When I hit the API
+    
+    Then I have not created another user for myself
+    
+    And I am returned the error <CUSTOM ERROR>
+    
     
