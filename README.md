@@ -1,5 +1,5 @@
 # Examples of Automated Tests written in Gherkin (Given/When/Then) format
-## These tests can act as a Product Catalog of existing business functionality
+### These tests can act as a Product Catalog of existing business functionality
 
 
 # Login UI Tests
