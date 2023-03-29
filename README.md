@@ -1,10 +1,12 @@
-# Examples of Automated Tests written in Gherkin (Given/When/Then) format
-### These tests can act as a Product Catalog of existing business functionality
+# Test Plan Example
+- Tests are written in Gherkin (Given/When/Then) format
+- Test scenarios can be automated
+- Tests can also serve as a Product Catalog of existing business functionality
 
 
-# Login UI Tests
+## Login UI Tests
 
-## Login_Success_Desktop
+### Login_Success_Desktop
     
     Given I am an existing user who is logged out on desktop
     
@@ -12,7 +14,7 @@
     
     Then I am logged in
 
-## Login_Success_for_Mobile_Web
+### Login_Success_for_Mobile_Web
     
     Given I am an existing user who is logged out on mobile web
     
@@ -20,7 +22,7 @@
     
     Then I am logged in on mobile view
 
-## Unable_to_Login_with_Non-Existent_Email
+### Unable_to_Login_with_Non-Existent_Email
     
     Given I am a guest on the login page
     
@@ -28,7 +30,7 @@
     
     Then I see the error invalid username/password
 
-## Unable_to_Login_with_Incorrect_Password
+### Unable_to_Login_with_Incorrect_Password
     
     Given I am a guest on the login page
     
@@ -36,7 +38,7 @@
     
     Then I see the error invalid username/password
 
-## Unable_to_Login_with_Invalid_Email_Address_Format
+### Unable_to_Login_with_Invalid_Email_Address_Format
     
     Given I am a guest on the login page
     
@@ -45,9 +47,9 @@
     Then I see an error for invalid email
     
     
-# GraphQL Schema Tests
+## GraphQL Schema Tests
 
-## GraphQL: schema
+### GraphQL: schema
 
   Given I am a user
   
@@ -57,7 +59,7 @@
   
   Then I receive a valid schema response
 
-## GraphQL: bad request: field undefined
+### GraphQL: bad request: field undefined
     
     Given I am a user
     
@@ -67,7 +69,7 @@
     
     Then I receive a field undefined error
 
-## GraphQL: bad request: missing field
+### GraphQL: bad request: missing field
     
     Given I am a user
     
@@ -77,9 +79,9 @@
     
     Then I receive a missing field error
 
-# API Login
+## API Tests
 
-## Login: Happy Path
+### Login: Happy Path
 
     Given I am an existing user
     
@@ -89,7 +91,7 @@
 
     Then I am signed in
 
-## Login: email that contains leading and trailing whitespace gets trimmed
+### Login: email that contains leading and trailing whitespace gets trimmed
     
     Given I am an existing user
     
@@ -99,7 +101,7 @@
 
     Then I am signed in
 
-## Login: incorrect email
+### Login: incorrect email
    
     Given I am an existing user
     
@@ -109,7 +111,7 @@
     
     Then I am returned the error <CUSTOM ERROR>
 
-## Login: incorrect password
+### Login: incorrect password
 
     Given I am an existing user
 
